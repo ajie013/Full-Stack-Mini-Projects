@@ -1,0 +1,124 @@
+
+body{
+   
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.fa-plus{
+    margin-left: 7px;
+}
+.table-user-wrapper{
+    
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.375);
+    margin: 10px 5px;
+    padding: 10px;
+
+} 
+
+.table-user-wrapper .rdt_TableHead{
+    background-color: red !important;
+}
+
+
+.loader {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border: 5px solid #282828;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+   
+    z-index: 10;
+}
+
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+} 
+
+.dt-search{
+   
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.dt-search label {
+ 
+    color: black ;
+    font-weight: lighter ;    
+}
+
+.dt-search .dt-input {
+    
+    outline: none ;
+}
+
+.dt-length, .dt-info {
+
+    display: none;
+}
+
+.dt-paging {
+ 
+    margin: 0px ;
+    padding: 5px 0px ;
+  
+    display: flex;
+    justify-content: end;
+}
+
+.dt-paging nav {
+    margin: 0px ;
+    padding: 0px ;
+    display: flex ;
+    gap: 0px ;
+    background-color: aqua;
+}
+.dt-paging nav > .dt-paging-button {
+    border: 1px solid rgba(0,0,0,0.1) ;
+    margin-left: 0 ;
+    border-radius: 0px ;
+    width: 40px;
+    height: 40px;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current {
+    background: linear-gradient(to bottom, #585858 0%, #111 100%) ;
+    border: none ;
+    outline: none ;
+    color: white ;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current:hover {
+    color: white ;
+    border: none ;
+    outline: none 
+}
+
+[data-column-id="id"].rdt_TableCol, [data-column-id="lastname"].rdt_TableCol,[data-column-id="firstname"].rdt_TableCol
+,[data-column-id="email"].rdt_TableCol,[data-column-id="buttons"].rdt_TableCol{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+}
+.table-users{
+margin-top: 10px;
+}
+.action-buttons-wrapper{
+display: flex;
+gap: 2px;
+}
