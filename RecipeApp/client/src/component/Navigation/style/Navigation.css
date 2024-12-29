@@ -23,6 +23,8 @@
 .navigation-bar ul{
     list-style: none;
     margin-right: 10px;
+    margin-top: 10px;
+ 
 }
 
 .navigation-bar ul li{

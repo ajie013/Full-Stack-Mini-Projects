@@ -1,3 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import truncateText from '../../utils/truncateText';
+
 interface MealItemProps {
     idMeal: string;
     strMealThumb: string;
@@ -8,14 +11,19 @@ interface MealItemProps {
 const MealItem: React.FC<MealItemProps> = ({idMeal, strMealThumb, strMeal}) =>{
     return(
         <>
-            <div className="meal-item">
+            <div className="meal-item" title={strMeal}>
                 <div className="img-wrapper">
                     <img src={strMealThumb} alt="" />
                 </div>
                 
                 <div className="info-wrapper">
-                    <p>{strMeal}</p>
+                    <p>{truncateText(strMeal)}</p>
                 </div>
+
+                <div className='button-wrapper'>
+                    <button className='d-block mx-auto viewRecipeBtn'>View Recipe</button>
+                </div>
+                
             </div>
             
         </>
