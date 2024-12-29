@@ -1,0 +1,109 @@
+.login-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222831;
+   
+}
+
+.login-bg .login-wrapper{
+    height: 340px;
+    width: 340px;
+    color: #EEEEEE;
+    background-color: #393E46;
+    border: 1px solid #393E46;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px  #EEEEEE;
+    
+}
+input::placeholder{
+    font-weight: lighter;
+    font-size: 0.9rem;
+}
+
+.login-bg .login-wrapper .login-header{
+    text-align: center;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+
+.login-wrapper input{
+    padding: 5px 6px;
+    background-color: #EEEEEE;
+    border: none;
+    font-weight: lighter;
+    outline: 1px solid #393E46;
+    letter-spacing: 1px;
+}
+
+.login-wrapper label{
+    color: #EEEEEE;
+}
+.login-bg .login-wrapper form{
+    width: 100%;
+    padding: 20px;
+  
+    margin-top: 2px;
+}
+.login-bg .login-wrapper form > *{
+    width: 100%;
+}
+.login-bg .login-wrapper  .submit-login-btn{
+    margin-top: 20px;
+    letter-spacing: 2px;
+    background-color: #00ADB5;
+    border-radius: 0px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    height: 35px;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forgot-pass-wrapper{
+    display: flex;
+    justify-content: end;
+    margin-top: 5px;
+    color: #00ADB5
+ 
+}
+.sign-up{
+    font-size: 0.8rem;
+    color: #EEEEEE
+}
+
+.loader-login {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #282828;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    z-index: 10;
+   
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
