@@ -11,9 +11,8 @@ const fetchData = (url) =>{
     });
 }
 
-const getMealByLetter = async (req, res) =>{
+const getMealByName = async (req, res) =>{
     const inputName = req.params.name;
-    // www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
     try {
         const data = await fetchData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputName}`);
         return res.json(data);
@@ -23,4 +22,15 @@ const getMealByLetter = async (req, res) =>{
     
 }
 
-export {getMealByLetter}
+const getMealById = async (req, res) =>{
+    const inputId = req.params.id;
+    try {
+        const data = await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${inputId}`);
+        return res.json(data);
+    } catch (error) {
+        return res.status(500).json({ error: 'An error occurred while fetching data.' });
+    }
+    
+}
+
+export {getMealByName,getMealById}

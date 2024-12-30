@@ -4,6 +4,10 @@ import './style/Home.css'
 import axios from "axios";
 import searchIcon from '../../assets/search.png'
 import MealItem from "./MealItem.tsx";
+
+
+
+
 type searchType = string
 
 type mealType = {
@@ -12,9 +16,12 @@ type mealType = {
     strMeal: string;
     
 }
+
 const Home: React.FC = () =>{
-    const [search, setSearch] = useState<searchType>('')
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+   
+  
+    const [search, setSearch] = useState<searchType>('');
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [data, setData] = useState<mealType[] | null>(null);
    
     const fetchData = () : void =>{
@@ -38,11 +45,10 @@ const Home: React.FC = () =>{
             setIsLoading(false)
         });
     };
-
-
+  
     const searchChange = (e: ChangeEvent<HTMLInputElement>) : void =>{
         setSearch(prev => prev = e.target.value);
-        setData(null);
+       
     };
 
     const SearchMeal = () : void =>{
@@ -52,21 +58,24 @@ const Home: React.FC = () =>{
     return(
         <>
            <Navigation/>
+         
            <div className="home-container">
+               
                 <div className="search-recipe-wrapper">
                     <img src={searchIcon} alt="" onClick={SearchMeal} />
                     <input type="search" className="input-search" placeholder="Search Meal Name" value={search} onChange={searchChange} required />
                 </div>          
-                <div>
-                    <div className="grid-meals">
-                        {data === null ? 
-                            ("") : 
-                            ( data.length > 0 ? (data.map((item, index) =>  <MealItem key={index} idMeal={item.idMeal} strMeal={item.strMeal} strMealThumb={item.strMealThumb} />)) : (<div className="no-data">No Data...</div>))
-                        }
-                    </div>
-              
-                    {isLoading &&  <span className="loader"></span>}
+               
+                <div className="grid-meals">
+                    {data === null ? 
+                        ("") : 
+                        ( data.length > 0 ? (data.map((item, index) =>  <MealItem key={index} meal={item}/>)) : (<div className="no-data">No Data...</div>))
+                    }
                 </div>
+            
+                {isLoading &&  <span className="loader"></span>}
+               
+               
            </div>
         </>
     )

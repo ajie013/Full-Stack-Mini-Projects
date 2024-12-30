@@ -15,4 +15,8 @@
 
 body{
     background-color: var(--space);
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
