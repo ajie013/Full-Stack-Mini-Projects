@@ -77,27 +77,8 @@ const ViewModal : React.FC<modalProps> = ({setModalToggler,id}) =>{
     };
    
     useEffect(() =>{
-        fetchData(); 
+        fetchData();
     },[])
-
-    useEffect(() =>{
-        if(data){
-          console.log(data)
-        }
-    },[data])
-
-    useEffect(() =>{
-        if(ingredients.length !== 0){
-            console.log(ingredients)
-        }
-    },[ingredients])
-
-    useEffect(() =>{
-        if(measure.length !== 0){
-            console.log(measure)
-        }
-    },[measure])
-
 
     const CloseModal = () =>{
         setModalToggler(prev => !prev);
@@ -109,7 +90,12 @@ const ViewModal : React.FC<modalProps> = ({setModalToggler,id}) =>{
                 <div className='view-modal-container'>
                     {data && ingredients && measure ?
                      <div className="content">
-                        <div className="modal-header"><p>{data?.strMeal}</p></div>
+                        <div className="modal-header">
+                            <p className='name'>{data.strMeal}</p>
+                        </div>
+                        <div className='category'>
+                            <p className='category-label'>{data.strCategory}</p>
+                     </div>
 
                         <div className='meal-photo-container'>
                             <img src={data?.strMealThumb} className='meal-photo' alt="" />
@@ -126,10 +112,16 @@ const ViewModal : React.FC<modalProps> = ({setModalToggler,id}) =>{
                             <p className='instructions-header'>Instruction</p>
                            
                             <p className='instruction-text'>
-                            {data.strInstructions.split('.').map(item => <p>{item}.</p>)}
+                            {data.strInstructions.split('.').map((item,index) => <p key={index}>{item}.</p>)}
                             </p>
                         </div>
-
+                        
+                        <div className='tag-wrapper'>
+                            <p className='tag-label'>Tags: &nbsp;</p>
+                            {data.strTags && typeof data.strTags === 'string' && data.strTags.includes(',') 
+                            ? data.strTags.split(',').map((item, index) => <p key={index} className='tag-item'>{item.trim()}&nbsp;</p>) 
+                            : <p className='tag-item'>{data.strTags ? data.strTags : 'No tags available'}&nbsp;</p>}
+                        </div>
 
                     </div> : <span className="loader-modal"></span>}
                    
