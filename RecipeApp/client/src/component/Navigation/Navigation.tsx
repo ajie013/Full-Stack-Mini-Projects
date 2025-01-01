@@ -9,7 +9,7 @@ const Navigation: React.FC = () =>{
                 <ul>
                     <li><NavLink to="/" className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}>Home</NavLink></li>
                     <li><NavLink to="/categories" className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}>Categories</NavLink></li>
-                    <li><NavLink to="/recipe" className={({ isActive }) => (isActive ? "nav-link active-link" : "nav-link")}>Recipe</NavLink></li>
+                   
                 </ul>
            </nav>
         </>

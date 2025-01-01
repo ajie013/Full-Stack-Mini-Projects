@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../../component/Navigation/Navigation";
 import axios from "axios";
 import './style/Categories.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from "react";
 import MealItem from "../Home/MealItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,11 +14,13 @@ interface categoryObj {
     strCategoryDescription: string;
     strCategoryThumb: string;
 }
+
 interface mealType{
     idMeal: string;
     strMealThumb: string;
     strMeal: string;
 }
+
 interface loader{
     categoryLoader: boolean;
     gridListLoader: boolean
@@ -101,26 +104,10 @@ const Categories: React.FC = () => {
                 <div className="grid-meals">
                     {loader.gridListLoader &&  <span className="loader-category-list"></span>}
                    
-                    {data && data.map((item,index)=> <MealItem key={index} meal={item} selectedMeals={selectedMeals}
-                        setSelectedMeals={setSelectedMeals}/> )}
+                    {data && data.map((item,index)=> <MealItem key={index} meal={item}/> )}
                 </div>
 
-                {selectedMeals.length > 0 &&  
-                    <div className="action-menu">
-                            <button className="btn btn-success">
-                            <FontAwesomeIcon icon={faCheck} className='check'/>
-                            <span>{selectedMeals.length === 1 ? "Save Recipe" : "Save Recipes"}</span>
-                            </button>
-
-                            <button className="btn btn-danger"> 
-                            <FontAwesomeIcon icon={faXmark} className='x-mark'/>
-                                <span>Cancel</span>
-                            </button>
-                        
-                            <div> {selectedMeals.length === 1 ? "Selected Item" : "Selected Items"}:&nbsp;{selectedMeals.length} </div>
-                        
-                    </div>
-                }
+              
             </div>
         </>
     );

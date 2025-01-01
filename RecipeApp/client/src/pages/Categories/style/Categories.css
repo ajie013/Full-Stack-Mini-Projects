@@ -54,7 +54,7 @@
     justify-content: space-between; 
     margin: 5px 0px;
     transition: 0.3s ease-in-out;
-    cursor: pointer;
+   
  
 }
 
@@ -138,6 +138,10 @@
     animation: rotation 1s linear infinite;
     z-index: 50;
 }
+
+
+
+
 
 
 @keyframes rotation {
@@ -288,9 +292,7 @@
     height: 50px;
     filter: drop-shadow(0px 0px 5px rgba(28, 27, 27, 0.759));
 }
-.categories-container .view-modal-container .instructions-wrapper{
-   
-}
+
 .categories-container .view-modal-container .instructions-wrapper .instructions-header{
     margin-top: 10px;
     font-weight: bold;
